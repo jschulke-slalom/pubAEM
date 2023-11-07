@@ -122,7 +122,19 @@ export default async function decorate(block) {
         });
       });
     }
+// Get all the navigation links
+const navLinks = document.querySelectorAll('.nav-sections a');
 
+// Add a click event listener to each link
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    // Remove the active class from all links
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Add the active class to the clicked link
+    link.classList.add('active');
+  });
+});
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');

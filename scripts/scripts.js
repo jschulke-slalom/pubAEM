@@ -49,12 +49,23 @@ async function loadFonts() {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildBreadcrumbBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
 }
-
+/**
+ * Builds breadcrumb block and prepends to main in a new section.
+ * @param {Element} main The container element
+ */
+function buildBreadcrumbBlock(main) {
+  if (window.location.pathname !== '/' && window.isErrorPage !== true && !getMetadata('hideBreadcrumb')) {
+    const section = createElement('div');
+    section.append(buildBlock('breadcrumb', { elems: [] }));
+    main.prepend(section);
+  }
+}
 /**
  * Decorates the main element.
  * @param {Element} main The main element
