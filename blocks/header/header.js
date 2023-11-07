@@ -122,19 +122,27 @@ export default async function decorate(block) {
         });
       });
     }
-// Get all the navigation links
-const navLinks = document.querySelectorAll('.nav-sections a');
 
-// Add a click event listener to each link
-navLinks.forEach(link => {
-  link.addEventListener('click', (event) => {
-    // Remove the active class from all links
-    navLinks.forEach(link => link.classList.remove('active'));
-    
-    // Add the active class to the clicked link
-    link.classList.add('active');
-  });
-});
+    const navTools = nav.querySelector('.nav-tools');
+    if (navTools) {
+      navTools.querySelectorAll(':scope > ul > li').forEach((navTool) => {
+        if (navTools.querySelector('ul')) navTool.classList.add('nav-drop');
+        navTool.addEventListener('click', () => {
+          if (isDesktop.matches) {
+            const expanded = navTool.getAttribute('aria-expanded') === 'true';
+            toggleAllNavSections(navTools);
+            navTool.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          }
+        });
+      });
+        document.addEventListener('click', (event) => {
+          const openNavTool = navTools.querySelector('[aria-expanded="true"]');
+          if (openNavTool && !event.target.closest('.nav-tools')) {
+            openNavTool.setAttribute('aria-expanded', 'false');
+          }
+        });
+    }
+
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');

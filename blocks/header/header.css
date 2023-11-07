@@ -21,14 +21,6 @@ header nav {
   font-family: var(--body-font-family);
 }
 
-header nav[aria-expanded="true"] {
-  /* grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr; */
-  overflow-y: auto;
- 
-}
 
 @media (min-width: 600px) {
   header nav {
@@ -57,7 +49,7 @@ header nav a:any-link {
   color: #fff;
 }
 header nav a:any-link.current {
-  color: #fff;
+  color: #333;
 }
 /* hamburger */
 header nav .nav-hamburger {
@@ -297,15 +289,72 @@ header nav .nav-tools {
   gap: 10px;
   font-size: 16px;
 }
-header nav .nav-tools ol {
- overflow: hidden;
- border: 2px solid #fff;
+header nav .nav-tools ul {
+ border: 1px solid #fff;
  list-style: none;
  padding: 8px;
  border-radius: 4px;
  height: 20px;
  width: 45px;
  color: #fff;
+ position: relative;
+ background-color: var(--text-color);
+}
+header nav .nav-tools ul > li {
+ cursor: pointer;  
+ display: flex;
+ gap: 10px;
+}
+header nav .nav-tools ul li::after {
+  width: 20px;
+  height: 20px;
+  content:'';
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml,<svg width="10" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1 13l4 4 4-4M9 5L5 1 1 5" stroke="white" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+}
+header nav .nav-tools ul li ul {
+  width: 189px;
+  max-height: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  right: -2px;
+  top: 40px;
+  transition: all 0.3s ease-in-out;
+}
+header nav .nav-tools ul li[aria-expanded="true"] ul {
+  opacity: 1;
+  max-height: 1000px;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  header nav .nav-tools ul li ul {
+    right: auto;
+    left:-2px;
+  }
+}
+header nav .nav-tools ul li ul li {
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  cursor: default;
+}
+header nav .nav-tools ul li ul li::after {
+  display: none;
+}
+header nav .nav-tools ul li ul li:hover {
+  background-color: var(--link-color);
+}
+header nav .nav-tools ul li ul li a:hover {
+  text-decoration: none;
+}
+header nav .nav-tools ul li ul li img {
+  height: 21px;
+  width: 28px;
 }
 header nav .nav-sections ol {
   padding-top: 30px;
