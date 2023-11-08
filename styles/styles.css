@@ -257,11 +257,14 @@ main .section {
 main .section.highlight {
   background-color: var(--highlight-background-color);
 }
-main .section.dark {
+main .section.dark, main .section.dark-center {
   background-color: var(--text-color);
   color: var(--background-color);
 }
-main .section.dark a.button.secondary {
+main .section.dark-center {
+  text-align: center;
+}
+main .section.dark a.button.secondary, main .section.dark-center a.button.secondary {
   color: #fff;
 }
 p:has(> picture) {
