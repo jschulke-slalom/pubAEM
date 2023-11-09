@@ -148,7 +148,7 @@ header:has(nav[aria-expanded="true"]) + main {
   padding-left: 240px;
 }
 header:has(nav[aria-expanded="true"]) + main + footer {
-  padding-left: 270px;
+  padding-left: 300px;
 }
 /* sections */
 header nav .nav-sections {

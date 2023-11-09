@@ -9,7 +9,6 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-
  :root {
   /* colors */
   --link-color: #47c2ec;
@@ -21,7 +20,7 @@
   --text-color: #232f3e;
 
   /* fonts */
-  --body-font-family: AmazonEmberDisplay,Helvetica,Arial,sans-serif;
+  --body-font-family: AmazonEmberDisplay,roboto,Helvetica,Arial,sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -31,9 +30,9 @@
   --body-font-size-xs: 16px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 32px;
+  --heading-font-size-xxl: 36px;
   --heading-font-size-xl: 32px;
-  --heading-font-size-l: 32px;
+  --heading-font-size-l: 28px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
@@ -54,7 +53,7 @@
 @media (min-width: 900px) {
   :root {
     --heading-font-size-xxl: 36px;
-    --heading-font-size-xl: 30px;
+    --heading-font-size-xl: 32px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 24px;
     --heading-font-size-s: 22px;
@@ -86,10 +85,18 @@ h4, h5, h6 {
   font-weight: 600;
   line-height: 1.25;
   margin-top: 0;
-  margin-bottom: .5em;
+  margin-bottom: 32px;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
-
+h1, h2 {
+  font-weight: 400;
+}
+@media (min-width: 600px) {
+h1, h2, h3,
+h4, h5, h6 {
+  /* padding-top: 64px; */
+}
+}
 h1 { font-size: var(--heading-font-size-xxl) }
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
@@ -237,12 +244,12 @@ main img {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 32px;
 }
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 64px;
   }
 }
 
@@ -269,4 +276,15 @@ main .section.dark a.button.secondary, main .section.dark-center a.button.second
 }
 p:has(> picture) {
   margin-top: 0;
+}
+@media (min-width: 900px) {
+.section.post .default-content-wrapper {
+  width: 83%;
+  margin: 0;
+}
+.section.post .default-content-wrapper img {
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
 }

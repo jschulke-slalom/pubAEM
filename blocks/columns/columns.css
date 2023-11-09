@@ -34,12 +34,21 @@
 .section.hero-cols {
   padding: 1px;
   background-color: var(--text-color);
+  font-size: 20px;
 }
 .hero-cols h3 {
   margin: 0;
 }
 .hero-cols .columns {
-  margin-top: -220px;
+  margin: -120px auto 0;
+  max-width: 1440px;
+  padding: 0 32px;
+}
+@media (min-width: 600px) {
+  .hero-cols .columns {
+    margin: -220px auto 0;
+    padding: 0 64px;
+  }
 }
 .hero-cols .columns > div {
     gap:20px;
@@ -59,11 +68,13 @@
 .featured-news .columns > div div:nth-child(1) {
   border-radius: 4px;
   box-shadow:  0px 2px 3px rgba(11,12,12,.16);
-  overflow: hidden;
 }
 .featured-news .columns p, .featured-news .columns h3 {
   margin-right:12px;
   margin-left: 12px;
+}
+.featured-news .columns h3 {
+  margin-top: 20px;
 }
 .featured-news .columns p:has(picture) {
   margin:0;
