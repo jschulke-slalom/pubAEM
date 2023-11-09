@@ -120,9 +120,12 @@ export default async function decorate(block) {
             navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
           }
         });
+        // Check if the current page URL matches the URL of the navigation item
+if (window.location.pathname === navSection.querySelector('a').pathname) {
+  navSection.classList.add('current');
+}
       });
     }
-
     const navTools = nav.querySelector('.nav-tools');
     if (navTools) {
       navTools.querySelectorAll(':scope > ul > li').forEach((navTool) => {

@@ -172,10 +172,11 @@ header nav[aria-expanded="true"] .nav-sections {
 }
 
 header nav .nav-sections ul  {
+  margin: 32px 0;
   list-style: none;
   padding-left: 0;
   font-size: var(--body-font-size-s);
-  font-weight: 500;
+  font-weight: 400;
 }
 header nav .nav-sections ul > li {
   font-weight: 700;
@@ -189,10 +190,21 @@ header nav .nav-sections ul > li a:hover {
   background-color: #697576;
   text-decoration: none;
 }
-header nav .nav-sections ul > li a.active { 
+header nav .nav-sections ul > li.current a { 
   background-color: #485050;
+  position: relative;
 }
-
+header nav .nav-sections ul > li.current a::before {
+  content: '';
+  width: 4px;
+  margin:0 4px;
+  background-color: var(--link-color);
+  border-radius: 999px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: calc(100% - 8px);
+}
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
 }
