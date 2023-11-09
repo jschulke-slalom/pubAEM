@@ -159,7 +159,7 @@ a.button:any-link, button {
   padding: 5px 30px;
   text-align: center;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
@@ -190,7 +190,21 @@ a.button.secondary:hover, button.secondary:hover {
   background-color: var(--link-dark);
   color: #fff;
 }
-
+a.button .icon {
+  margin: 0 10px;
+}
+a.button:has(.icon) {
+  color: var(--link-dark);
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a.button:has(.icon):hover {
+  background-color: #e7e9e9;
+  box-shadow: 0 1px 2px 0 rgba(11,12,12,.16);
+}
 main input {
   font-size: 1.25rem;
   width: 100%;
