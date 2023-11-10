@@ -50,6 +50,11 @@
     padding: 0 64px;
   }
 }
+@media (min-width: 1672px) {
+  .hero-cols .columns {
+    padding: 0;
+  }
+}
 .hero-cols .columns > div {
     gap:20px;
 }
@@ -58,6 +63,9 @@
   padding: 0 64px 0 16px;
   color: #fff;
 
+}
+.section.hero-cols + .section {
+  padding-top: 1px;
 }
 .section.featured-news {
   padding-bottom: 0;
