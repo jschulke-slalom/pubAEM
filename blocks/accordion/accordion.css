@@ -43,7 +43,7 @@ main .accordion ul .content {
   max-height: 0;
   overflow: hidden;
   border-bottom: 1px solid #bbc0c1;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 main .accordion ul .title.open + .content {
   max-height:2000px;

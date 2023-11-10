@@ -123,3 +123,6 @@
  .col-white .columns > div {
    margin-bottom: 32px;
  }
+ .col-align-top .columns > div {
+  align-items: start;
+ }
