@@ -131,11 +131,9 @@ if (window.location.pathname === navSection.querySelector('a').pathname) {
       navTools.querySelectorAll(':scope > ul > li').forEach((navTool) => {
         if (navTools.querySelector('ul')) navTool.classList.add('nav-drop');
         navTool.addEventListener('click', () => {
-          if (isDesktop.matches) {
             const expanded = navTool.getAttribute('aria-expanded') === 'true';
             toggleAllNavSections(navTools);
             navTool.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-          }
         });
       });
         document.addEventListener('click', (event) => {
