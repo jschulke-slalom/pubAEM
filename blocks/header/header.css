@@ -57,15 +57,19 @@ header nav .nav-hamburger {
   height: 22px;
   display: flex;
   align-items: center;
+  border-radius: 4px;
+  padding: 6px;
 }
-
+header nav .nav-hamburger:hover {
+  background-color: hsla(0,0%,100%,.22);
+}
 header nav .nav-hamburger button {
   height: 22px;
   margin: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--text-color);
+  background-color: transparent;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
